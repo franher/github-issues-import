@@ -6,8 +6,11 @@ import base64
 import sys, os
 import datetime
 import argparse, configparser
-
+import ssl
 import query
+
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 default_config_file = os.path.join(__location__, 'config.ini')
